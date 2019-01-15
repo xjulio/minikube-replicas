@@ -64,7 +64,7 @@ tomcat    1         1         1            1           14h
 
 The tomcat and nginx was deployed on k8s using the NodePort, for this we must find the IP address/port of services executing the following command:
 `
-minikube service list
+minikube service list --namespace=a2
 `
 
 <pre>
@@ -73,10 +73,6 @@ minikube service list
 |-------------|----------------------|-----------------------------|
 | a2          | apache-service       | http://192.168.99.103:30946 |
 | a2          | tomcat-service       | http://192.168.99.103:30745 |
-| default     | kubernetes           | No node port                |
-| kube-system | default-http-backend | http://192.168.99.103:30001 |
-| kube-system | kube-dns             | No node port                |
-| kube-system | kubernetes-dashboard | No node port                |
 |-------------|----------------------|-----------------------------|
 </pre>
 
